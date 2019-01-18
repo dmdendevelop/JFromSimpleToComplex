@@ -1,4 +1,4 @@
-package ru.develop.dmden.modul2.operators;
+package ru.develop.dmden.lessons.modul2.operators;
 
 public class Operators {
     public static void main(String[] args) {
