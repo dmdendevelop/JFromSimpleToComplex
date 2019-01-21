@@ -7,7 +7,7 @@ public class Dog {
     public static final int tail = 1;
     private String name;
     private String breed;
-    private Size size;
+    private Size size = Size.UNDEFINED;
 
     public Dog() {
         dogsCounter++;
@@ -67,6 +67,8 @@ public class Dog {
             case VERY_LARGE:
                 System.out.println("Wuf - wuf");
                 break;
+            default:
+                System.out.println("The size is not defined");
         }
     }
 

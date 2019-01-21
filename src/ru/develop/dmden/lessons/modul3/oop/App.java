@@ -13,7 +13,7 @@ public class App {
         Dog shepherd = new Dog();
         shepherd.setName("Mike");
         shepherd.setBreed("Shepherd");
-        shepherd.setSize(Size.LARGE);
+//        shepherd.setSize(Size.LARGE);
         System.out.println("========================");
         shepherd.bark();
         shepherd.bite();
@@ -25,5 +25,10 @@ public class App {
         System.out.println("========================");
         poodle.bark();
         poodle.bite();
+
+        Size[] sizes = Size.values();
+        for (Size size : sizes) {
+            System.out.print(size + "   ");
+        }
     }
 }
