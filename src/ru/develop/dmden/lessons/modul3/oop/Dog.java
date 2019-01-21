@@ -3,29 +3,23 @@ package ru.develop.dmden.lessons.modul3.oop;
 public class Dog {
     public static int dogsCounter;
 
-    private int paws;
-    private int tail;
+    public static final int paws = 4;
+    public static final int tail = 1;
     private String name;
     private String breed;
-    private String size;
+    private Size size;
 
     public Dog() {
         dogsCounter++;
         System.out.println("Dogscounter = " + dogsCounter);
     }
 
-    public String getSize() {
+    public Size getSize() {
         return size;
     }
 
-    public void setSize(String size) {
-        if (size.equalsIgnoreCase("Small") ||
-                size.equalsIgnoreCase("average") ||
-                size.equalsIgnoreCase("large")) {
-            this.size = size;
-        } else {
-            System.out.println("Wrong size!!!");
-        }
+    public void setSize(Size size) {
+        this.size = size;
     }
 
     public static int getDogsCounter() {
@@ -40,26 +34,8 @@ public class Dog {
         return paws;
     }
 
-    public void setPaws(int paws) {
-        if (paws == 4) {
-            this.paws = paws;
-        } else {
-            this.paws = 4;
-            System.out.println("Should be four paws");
-        }
-    }
-
     public int getTail() {
         return tail;
-    }
-
-    public void setTail(int tail) {
-        if (tail == 1) {
-            this.tail = tail;
-        } else {
-            this.tail = 1;
-            System.out.println("Should be one tail");
-        }
     }
 
     public String getName() {
@@ -79,12 +55,18 @@ public class Dog {
     }
 
     public void bark() {
-        if (size.equalsIgnoreCase("Large")) {
-            System.out.println("Wuf - wuf");
-        } else if (size.equalsIgnoreCase("average")) {
-            System.out.println("Raw - raw");
-        } else if (size.equalsIgnoreCase("small")) {
-            System.out.println("Tyaf - tyaf");
+        switch (size) {
+            case VERY_SMALL:
+            case SMALL:
+                System.out.println("Tyaf - tyaf");
+                break;
+            case AVERAGE:
+                System.out.println("Raw - raw");
+                break;
+            case LARGE:
+            case VERY_LARGE:
+                System.out.println("Wuf - wuf");
+                break;
         }
     }
 
