@@ -6,13 +6,33 @@ public class Employee {
     private String name;
     private String position;
     private int salary;
+    private String department;
+
+    {
+        name = "No_name";
+        position = "No_position";
+        salary = 0;
+        department = "No_department";
+    }
+
+    public Employee() {
+        id = ++count;
+    }
+
+    public Employee(String name) {
+        this(name, "Developer", 100);
+    }
 
     public Employee(String name, String position, int salary) {
-        count++;
-        id = count;
+        this(name, position, salary, "IT");
+    }
+
+    public Employee(String name, String position, int salary, String department) {
+        id = ++count;
         this.name = name;
         this.position = position;
         this.salary = salary;
+        this.department = department;
     }
 
     public static int getCount() {
@@ -42,6 +62,7 @@ public class Employee {
                 ", name='" + name + '\'' +
                 ", position='" + position + '\'' +
                 ", salary=" + salary +
+                ", department='" + department + '\'' +
                 '}';
     }
 }
