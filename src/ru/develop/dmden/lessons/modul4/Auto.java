@@ -23,6 +23,26 @@ public class Auto {
                 '}';
     }
 
+    public void setProducer(String producer) {
+        this.producer = producer;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setEngineType(EngineType engineType) {
+        this.engineType = engineType;
+    }
+
+    public void setCurrentSpeed(int currentSpeed) {
+        this.currentSpeed = currentSpeed;
+    }
+
+    public void setRunning(boolean running) {
+        isRunning = running;
+    }
+
     public String getProducer() {
         return producer;
     }
