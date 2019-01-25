@@ -1,57 +1,67 @@
 package ru.develop.dmden.lessons.modul4.aircrafts;
 
 public class PassengerAircraft extends Aircraft {
-    private int passengersNumber;
+    private int numberOfEngines;
+    private Engine engine;
+    private int maxNumberOfPass;
+    private int currentNumOfPass;
 
-    public PassengerAircraft(double maxAltitude, double minAltitude, double maxRange, EngineType engineType,
-                             String producer, String model, int passengersNumber) {
-        super(maxAltitude, minAltitude, maxRange, engineType, producer, model);
-        this.passengersNumber = passengersNumber;
+    public PassengerAircraft(double maxAlt, double minAlt, double maxRange, int numberOfEngines, int maxNumberOfPass,
+                             Engine engine) {
+        super(maxAlt, minAlt, maxRange);
+        this.numberOfEngines = numberOfEngines;
+        this.maxNumberOfPass = maxNumberOfPass;
+        this.engine = engine;
     }
 
-    public int getPassengersNumber() {
-        return passengersNumber;
+    public int getCurrentNumOfPass() {
+        return currentNumOfPass;
     }
 
-    public void setPassengersNumber(int passengersNumber) {
-        this.passengersNumber = passengersNumber;
+    public void setCurrentNumOfPass(int currentNumOfPass) {
+        this.currentNumOfPass = currentNumOfPass;
     }
 
-    @Override
-    public void toTakeoff(double altitude) {
-        if (isFly()) {
-            System.out.println("Passenger aircraft already flying");
-            return;
-        } else if (altitude < getMinAltitude()) {
-            System.out.println("The specified height below the minimum");
-            setCurrentAltitude(getMinAltitude());
-        } else if (altitude > getMaxAltitude()) {
-            System.out.println("The specified height greater than the maximum");
-            setCurrentAltitude(getMaxAltitude());
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public int getMaxNumberOfPass() {
+        return maxNumberOfPass;
+    }
+
+    public void setMaxNumberOfPass(int maxNumberOfPass) {
+        this.maxNumberOfPass = maxNumberOfPass;
+    }
+
+    public void boardingOfPass(int numberOfPass) {
+        if (!isFly()) {
+            if (getMaxNumberOfPass() >= numberOfPass) {
+                setCurrentNumOfPass(numberOfPass);
+            } else {
+                setCurrentNumOfPass(getMaxNumberOfPass());
+            }
+            System.out.println("The doors are closed. On Board " + getCurrentNumOfPass() + " passengers");
         } else {
-            setCurrentAltitude(altitude);
+            System.out.println("The plane in the air. Passengers cannot Board");
         }
-        setFly(true);
-        System.out.println("The passenger aircraft gained altitude " + getCurrentAltitude());
     }
 
-    @Override
-    public void toLanding() {
-        super.toLanding();
-    }
-
-    @Override
-    public void altitudeUP(double altitude) {
-        super.altitudeUP(altitude);
-    }
-
-    @Override
-    public void altitudeDown(double altitude) {
-        super.altitudeDown(altitude);
-    }
-
-    @Override
-    public void toFly(double range) {
-        super.toFly(range);
+    public void dissOfPass(int numberOfPass) {
+        if (!isFly()) {
+            setCurrentNumOfPass(getCurrentNumOfPass() - numberOfPass);
+            System.out.println("Disembarkation of passengers is complete");
+            if (getCurrentNumOfPass() > 0) {
+                System.out.println("On Board " + getCurrentNumOfPass() + " passengers.");
+            } else {
+                System.out.println("All passengers have left the Board");
+            }
+        } else {
+            System.out.println("The plane in the air. Passenger disembarkation is not possible");
+        }
     }
 }
