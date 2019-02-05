@@ -18,7 +18,7 @@ public class ListToArray {
         }
         System.out.println("***********************************");
 
-        colors = colorsList.toArray(new String[colorsList.size()]);
+        colors = colorsList.toArray(new String[0]);
         for (String color : colors) {
             System.out.println(color);
         }
