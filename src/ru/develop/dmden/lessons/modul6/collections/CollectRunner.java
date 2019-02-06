@@ -21,6 +21,26 @@ public class CollectRunner {
         System.out.println("Deck after shuffle.");
         Collections.shuffle(deckOfCards);
         printPutput(deckOfCards);
+        System.out.println("*******************************************************************************");
+
+        System.out.println("Sorted deck");
+        Collections.sort(deckOfCards);
+        printPutput(deckOfCards);
+
+        List<Card> deck2 = new ArrayList<>(deckOfCards);
+        printPutput(deck2);
+        System.out.println("====================================================");
+        Collections.fill(deck2, new Card(Card.Suit.DIMONDS, Card.Face.Deuce));
+        printPutput(deck2);
+        System.out.println("====================================================");
+        Collections.fill(deck2, null);
+        printPutput(deck2);
+        System.out.println("====================================================");
+        Collections.copy(deck2, deckOfCards);
+        printPutput(deck2);
+        System.out.println("====================================================");
+        Collections.reverse(deck2);
+        printPutput(deck2);
     }
 
     public static void printPutput(List<Card> deckOfCards) {
