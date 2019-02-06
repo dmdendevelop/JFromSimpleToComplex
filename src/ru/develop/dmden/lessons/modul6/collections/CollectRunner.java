@@ -27,6 +27,8 @@ public class CollectRunner {
         Collections.sort(deckOfCards);
         printPutput(deckOfCards);
 
+        Card card = new Card(Card.Suit.HEARTS, Card.Face.Three);
+
         List<Card> deck2 = new ArrayList<>(deckOfCards);
         printPutput(deck2);
         System.out.println("====================================================");
@@ -41,6 +43,10 @@ public class CollectRunner {
         System.out.println("====================================================");
         Collections.reverse(deck2);
         printPutput(deck2);
+        System.out.println("====================================================");
+        Collections.reverse(deck2);
+        int g = Collections.binarySearch(deck2, card);
+        System.out.println(g);
     }
 
     public static void printPutput(List<Card> deckOfCards) {
