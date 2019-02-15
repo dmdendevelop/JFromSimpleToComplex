@@ -1,5 +1,5 @@
-Brand Audi, model A6
-Brand VW, model Passat
-Brand BMW, model X5
-Brand Mazda, model Atenza
-Brand Toyota, model Camry
+0 - qwe, color - asd
+1 - zxc, color - vbn
+2 - nmn, color - dfg
+3 - ttt, color - ddd
+4 - ggg, color - hhh
