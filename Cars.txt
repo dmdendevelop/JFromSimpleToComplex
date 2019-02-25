@@ -1,5 +1,5 @@
-0 - qwe, color - asd
-1 - zxc, color - vbn
-2 - nmn, color - dfg
-3 - ttt, color - ddd
-4 - ggg, color - hhh
+0 - aSs,, color - asS
+1 - asa, color - d
+2 - f, color - g
+3 - g, color - g
+4 - f, color - d
