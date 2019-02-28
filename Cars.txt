@@ -1,5 +1,5 @@
-0 - aSs,, color - asS
-1 - asa, color - d
-2 - f, color - g
-3 - g, color - g
-4 - f, color - d
+0 - 121, color - 1
+1 - 210, color - 21
+2 - 2, color - 2
+3 - 2, color - 2
+4 - 2, color - 2
